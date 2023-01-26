@@ -98,54 +98,57 @@ fn main() {
         }
     }
 
-    let arg3 = args.get(3).expect(&(red.to_owned() + "Invalid or missing arguments! See: --help" + reset));
+    let date = arg1;
+    let time = arg2;
+
+    let scale = args.get(3).expect(&(red.to_owned() + "Invalid or missing arguments! See: --help" + reset));
     let arg4 = args.get(4).expect(&(red.to_owned() + "Invalid or missing arguments! See: --help" + reset));
 
     if arg4 == "MSD" {
-        let mars_sol_date_float = mars_t::msd_flt(arg1, arg2, arg3);
+        let mars_sol_date_float = mars_t::msd_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Mars Sol Date (MSD)" + reset + ": " + yellow);
         print!("{mars_sol_date_float}");
         println!("{reset}");
         return;
     } else if arg4 == "MTC" {
-        let martian_coordinated_time_float = mars_t::mtc_flt(arg1, arg2, arg3);
+        let martian_coordinated_time_float = mars_t::mtc_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_float}");
         println!("{reset}");
 
-        let martian_coordinated_time_formatted = mars_t::mtc_fmt(arg1, arg2, arg3);
+        let martian_coordinated_time_formatted = mars_t::mtc_fmt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_formatted}");
         println!("{reset}");
         return;
     } else if arg4 == "MSD+MTC" {
-        let mars_sol_date_float = mars_t::msd_flt(arg1, arg2, arg3);
+        let mars_sol_date_float = mars_t::msd_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Mars Sol Date (MSD)" + reset + ": " + yellow);
         print!("{mars_sol_date_float}");
         println!("{reset}");
 
-        let martian_coordinated_time_float = mars_t::mtc_flt(arg1, arg2, arg3);
+        let martian_coordinated_time_float = mars_t::mtc_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_float}");
         println!("{reset}");
 
-        let martian_coordinated_time_formatted = mars_t::mtc_fmt(arg1, arg2, arg3);
+        let martian_coordinated_time_formatted = mars_t::mtc_fmt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_formatted}");
         println!("{reset}");
         return;
     } else if arg4 == "MTC+MSD" {
-        let martian_coordinated_time_float = mars_t::mtc_flt(arg1, arg2, arg3);
+        let martian_coordinated_time_float = mars_t::mtc_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_float}");
         println!("{reset}");
 
-        let martian_coordinated_time_formatted = mars_t::mtc_fmt(arg1, arg2, arg3);
+        let martian_coordinated_time_formatted = mars_t::mtc_fmt(date, time, scale);
         print!("{}", violet.to_owned() + "Martian Coordinated Time (MTC)" + reset + ": " + yellow);
         print!("{martian_coordinated_time_formatted}");
         println!("{reset}");
 
-        let mars_sol_date_float = mars_t::msd_flt(arg1, arg2, arg3);
+        let mars_sol_date_float = mars_t::msd_flt(date, time, scale);
         print!("{}", violet.to_owned() + "Mars Sol Date (MSD)" + reset + ": " + yellow);
         print!("{mars_sol_date_float}");
         println!("{reset}");

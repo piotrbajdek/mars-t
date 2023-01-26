@@ -40,8 +40,8 @@ pub fn mtc_now_fmt() -> String {
 
 // CUSTOMISED DATE AND TIME
 
-pub fn msd_flt(arg1: &str, arg2: &str, arg3: &str) -> f64 {
-    let date_time_scale = arg1.to_owned() + " " + arg2 + " " + arg3;
+pub fn msd_flt(date: &str, time: &str, scale: &str) -> f64 {
+    let date_time_scale = date.to_owned() + " " + time + " " + scale;
 
     let dt_tm = Epoch::from_str(&date_time_scale);
     let jde_tt = dt_tm.unwrap().to_jde_tt_days();
@@ -50,15 +50,15 @@ pub fn msd_flt(arg1: &str, arg2: &str, arg3: &str) -> f64 {
     return mars_sol_date_float;
 }
 
-pub fn mtc_flt(arg1: &str, arg2: &str, arg3: &str) -> f64 {
-    let mars_sol_date_float = msd_flt(arg1, arg2, arg3);
+pub fn mtc_flt(date: &str, time: &str, scale: &str) -> f64 {
+    let mars_sol_date_float = msd_flt(date, time, scale);
 
     let martian_coordinated_time_float: f64 = mars_sol_date_float.rem_euclid(1.0) * 24.0;
     return martian_coordinated_time_float;
 }
 
-pub fn mtc_fmt(arg1: &str, arg2: &str, arg3: &str) -> String {
-    let martian_coordinated_time_float = mtc_flt(arg1, arg2, arg3);
+pub fn mtc_fmt(date: &str, time: &str, scale: &str) -> String {
+    let martian_coordinated_time_float = mtc_flt(date, time, scale);
 
     let martian_coordinated_time_formatted = TimeUnits::hours(martian_coordinated_time_float);
     return martian_coordinated_time_formatted.to_string();

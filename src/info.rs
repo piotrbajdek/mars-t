@@ -9,8 +9,8 @@
 
 pub fn about(reset: &str, blue_underlined: &str, grey: &str, yellow: &str) {
     println!("{}", grey.to_owned() + "Program" + reset + ":  " + yellow + "mars-t" + reset);
-    println!("{}", grey.to_owned() + "Version" + reset + ":  0.1.0");
-    println!("{}", grey.to_owned() + "Date" + reset + ":     January 26, 2023");
+    println!("{}", grey.to_owned() + "Version" + reset + ":  0.2.0");
+    println!("{}", grey.to_owned() + "Date" + reset + ":     January 27, 2023");
     println!("{}", grey.to_owned() + "Author" + reset + ":   Piotr Bajdek");
     println!("{}", grey.to_owned() + "Contact" + reset + ":  " + blue_underlined + "piotr.bajdek@proton.me" + reset);
     println!("{}", grey.to_owned() + "Source" + reset + ":   " + blue_underlined + "https://github.com/piotrbajdek/mars-t" + reset);
@@ -40,8 +40,8 @@ pub fn help(reset: &str, grey: &str, violet: &str, yellow: &str) {
 }
 
 pub fn version(reset: &str, grey: &str, yellow: &str) {
-    println!("{}", grey.to_owned() + "Version" + reset + ": " + yellow + "0.1.0" + reset);
-    println!("January 26, 2023");
+    println!("{}", grey.to_owned() + "Version" + reset + ": " + yellow + "0.2.0" + reset);
+    println!("January 27, 2023");
 }
 
 pub fn license(reset: &str, yellow: &str) {

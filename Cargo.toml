@@ -1,6 +1,6 @@
 [package]
 name = "mars-t"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
 description = "Mars Sol Date & Martian Coordinated Time: a library and a CLI app"
