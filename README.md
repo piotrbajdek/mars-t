@@ -1,18 +1,20 @@
 # MARS-T
 
-**A reusable library and a CLI application to facilitate the colonisation of Mars**
+**A comprehensive library and command-line interface (CLI) tool designed to aid in the colonisation of Mars, by providing reusable resources and functionalities**
 
-[mars-t](https://github.com/piotrbajdek/mars-t) calculates the date and time on Mars based on an Earth's UTC, TAI or TT.
+[mars-t](https://github.com/piotrbajdek/mars-t) determines the date and time on Mars by utilising Earth's Coordinated Universal Time (UTC), International Atomic Time (TAI), or Terrestrial Time (TT).
+
+It provides two types of time:
 
 **1.** Mars Sol Date (MSD)
 
-**2.** Martian Coordinated Time (MTC) / Airy Mean Time (AMT)
+**2.** Martian Coordinated Time (MTC)/ Airy Mean Time (AMT)
 
 # USAGE
 
 ![help-image](https://github.com/piotrbajdek/mars-t/blob/main/docs/images/help-image.png?raw=true)
 
-It is moreover possible to link against mars-t using its library as a dependency for other astronomical projects (see [public functions](https://docs.rs/mars-t/0.2.0/mars_t/all.html#functions)).
+It is moreover possible to link against mars-t using its library as a dependency for other astronomical projects (see [public functions](https://docs.rs/mars-t/0.2.1/mars_t/all.html#functions)).
 
 # EXAMPLES
 
@@ -20,64 +22,60 @@ It is moreover possible to link against mars-t using its library as a dependency
 
 # INSTALLATION ON LINUX
 
-[mars-t](https://github.com/piotrbajdek/mars-t) should run smoothly on **Windows** and **macOS**, and can be installed by the use of [cargo](https://www.rust-lang.org/tools/install). Yet, it is being developed and primarily tested on **Fedora Linux**.
+[mars-t](https://github.com/piotrbajdek/mars-t) is designed to be compatible with **Windows** and **macOS**, and can be easily installed using [cargo](https://www.rust-lang.org/tools/install). However, the primary development and testing environment for mars-t is **Fedora Linux**.
 
-mars-t v0.2.0:
+The current version of mars-t (v0.2.1) has been verified to work properly on Fedora Linux 37 and Ubuntu 22.10.
 
-– Was successfully tested on Fedora Linux 37, openSUSE Tumbleweed, and Ubuntu 22.10.
+## METHOD 1 – USING CARGO
 
-– Failed to run on Mageia 8 due to an old glibc version (required ≥2.34).
+**[Recommended for programmers]**
 
-## METHOD 1 – BY THE USE OF CARGO
-
-**[recommended for programmers]**
-
-**1.** Install from crates.io by the use of cargo:
+**1.** To install mars-t from [crates.io](https://crates.io/crates/mars-t), use the following cargo command:
 
 _cargo install mars-t_
 
-By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in your home directory.
+The executable will be saved in the hidden `.cargo/bin/` directory within your home directory.
 
-**2a.** For convenience, you will probably want to copy mars-t to `/usr/bin/` as in Method 2 (3a, 3b).
+**2a.** For easy access, you may want to copy the mars-t file to the `/usr/bin/` directory. This can be done by following the instructions in Method 2 (3a, 3b).
 
-**2b.** Alternatively, add `~/.cargo/bin` directory to your PATH variable (can be set up by [rustup](https://www.rust-lang.org/tools/install)).
+**2b.** As an alternative, you can add the `~/.cargo/bin/` directory to your system's PATH variable, which can be configured using [rustup](https://www.rust-lang.org/tools/install).
 
-## METHOD 2 – LINUX UNIVERSAL BINARIES
+## METHOD 2 – UNIVERSAL LINUX BINARIES
 
-**1.** Download the distro-independent [binary](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.0/mars-t) of mars-t from GitHub.
+**1.** To install mars-t, first download the distro-independent [binary](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.1/mars-t) from GitHub.
 
-**2.** Make the file executable:
+**2.** Then, make the file executable by running the command:
 
 _sudo chmod +x ./mars-t_
 
-**3a.** On most Linux distros, install mars-t via copying the binary to `/usr/bin/`:
+**3a.** On most Linux distributions, install mars-t by copying the binary to `/usr/bin/`:
 
 _sudo cp mars-t /usr/bin/_
 
-**3b.** On Fedora Silverblue / Kinoite:
+**3b.** For Fedora Silverblue / Kinoite, use this command:
 
 _sudo cp mars-t /var/usrlocal/bin/_
 
 ## METHOD 3 – DISTRO-SPECIFIC PACKAGES
 
-**[recommended for most users]**
+**[Recommended for most users]**
 
-Distro-specific packages are also available for download for [.rpm](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.0/mars-t-0.2.0-1.x86_64.rpm)- and [.deb](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.0/mars-t_0.2.0_amd64.deb)-based Linux distros. Installation instructions:
+Distro-specific packages for [.rpm](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.1/mars-t-0.2.1-1.x86_64.rpm) and [.deb](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.1/mars-t_0.2.1_amd64.deb)-based Linux distributions are also available for download. To install mars-t on different Linux distributions, follow these instructions:
 
 Fedora Linux / RHEL / openSUSE:
 
-_sudo rpm -i mars-t-0.2.0-1.x86_64.rpm_
+_sudo rpm -i mars-t-0.2.1-1.x86_64.rpm_
 
 Fedora Silverblue / Kinoite:
 
-_rpm-ostree install mars-t-0.2.0-1.x86_64.rpm_
+_rpm-ostree install mars-t-0.2.1-1.x86_64.rpm_
 
 Ubuntu:
 
-_sudo dpkg -i mars-t_0.2.0_amd64.deb_
+_sudo dpkg -i mars-t_0.2.1_amd64.deb_
 
 ## METHOD 4 – MANUAL COMPILATION
 
-Download and unpack the mars-t [source](https://github.com/piotrbajdek/mars-t/archive/refs/tags/v0.2.0.zip) from GitHub. Then, build and install the program:
+First, download and unpack the mars-t [source code](https://github.com/piotrbajdek/mars-t/archive/refs/tags/v0.2.1.zip) from GitHub. Next, to build and install the program, use the command:
 
 _cargo build \--release && sudo cp target/release/mars-t /usr/bin/_

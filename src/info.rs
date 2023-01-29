@@ -9,8 +9,8 @@
 
 pub fn about(reset: &str, blue_underlined: &str, grey: &str, yellow: &str) {
     println!("{}", grey.to_owned() + "Program" + reset + ":  " + yellow + "mars-t" + reset);
-    println!("{}", grey.to_owned() + "Version" + reset + ":  0.2.0");
-    println!("{}", grey.to_owned() + "Date" + reset + ":     January 27, 2023");
+    println!("{}", grey.to_owned() + "Version" + reset + ":  0.2.1");
+    println!("{}", grey.to_owned() + "Date" + reset + ":     January 29, 2023");
     println!("{}", grey.to_owned() + "Author" + reset + ":   Piotr Bajdek");
     println!("{}", grey.to_owned() + "Contact" + reset + ":  " + blue_underlined + "piotr.bajdek@proton.me" + reset);
     println!("{}", grey.to_owned() + "Source" + reset + ":   " + blue_underlined + "https://github.com/piotrbajdek/mars-t" + reset);
@@ -23,7 +23,7 @@ pub fn help(reset: &str, grey: &str, violet: &str, yellow: &str) {
     println!();
     println!("{}", grey.to_owned() + "Scales" + reset + ":    " + violet + "TAI" + reset + "      Temps Atomique International" + violet);
     println!("           TT{}", reset.to_owned() + "       Terrestrial Time" + violet);
-    println!("           UTC{}", reset.to_owned() + "      Universal Coordinated Time");
+    println!("           UTC{}", reset.to_owned() + "      Coordinated Universal Time");
     println!();
     println!("{}", grey.to_owned() + "Options" + reset + ":   " + violet + "MSD" + reset + "      Mars Sol Date" + violet);
     println!("           MTC{}", reset.to_owned() + "      Martian Coordinated Time" + violet);
@@ -34,14 +34,14 @@ pub fn help(reset: &str, grey: &str, violet: &str, yellow: &str) {
     println!("           mars-t now MSD+MTC");
     println!();
     println!("{}", grey.to_owned() + "See also" + reset + ":  " + violet + "-a" + reset + ", " + violet + "--about" + reset + "       About this program");
-    println!("           {}", violet.to_owned() + "-h" + reset + ", " + violet + "--help" + reset + "        This help");
+    println!("           {}", violet.to_owned() + "-h" + reset + ", " + violet + "--help" + reset + "        The help menu");
     println!("           {}", violet.to_owned() + "-l" + reset + ", " + violet + "--license" + reset + "     The program license");
     println!("           {}", violet.to_owned() + "-v" + reset + ", " + violet + "--version" + reset + "     The program version");
 }
 
 pub fn version(reset: &str, grey: &str, yellow: &str) {
-    println!("{}", grey.to_owned() + "Version" + reset + ": " + yellow + "0.2.0" + reset);
-    println!("January 27, 2023");
+    println!("{}", grey.to_owned() + "Version" + reset + ": " + yellow + "0.2.1" + reset);
+    println!("January 29, 2023");
 }
 
 pub fn license(reset: &str, yellow: &str) {
