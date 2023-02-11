@@ -1,0 +1,24 @@
+name: mars-t
+version: '0.2.1'
+summary: Mars Sol Date and Martian Coordinated Time
+description: |
+  mars-t determines the date and time on Mars by utilising Earth's Coordinated Universal Time (UTC), International Atomic Time (TAI), or Terrestrial Time (TT).
+
+  It provides two types of time
+
+  1. Mars Sol Date (MSD)
+
+  2. Martian Coordinated Time (MTC)/ Airy Mean Time (AMT)
+
+base: core18
+grade: stable
+confinement: strict
+
+parts:
+  mars-t:
+    plugin: rust
+    source: https://github.com/piotrbajdek/mars-t.git
+
+apps:
+  mars-t:
+    command: bin/mars-t
