@@ -1,5 +1,7 @@
 # MARS-T
 
+![mars-t-logo](https://github.com/piotrbajdek/mars-t/blob/main/docs/images/mars-t-logo.png?raw=true)
+
 **A comprehensive library and command-line interface (CLI) tool designed to aid in the colonisation of Mars, by providing reusable resources and functionalities**
 
 [mars-t](https://github.com/piotrbajdek/mars-t) determines the date and time on Mars by utilising Earth's Coordinated Universal Time (UTC), International Atomic Time (TAI), or Terrestrial Time (TT).
@@ -22,25 +24,29 @@ It is moreover possible to link against mars-t using its library as a dependency
 
 # INSTALLATION ON LINUX
 
-[mars-t](https://github.com/piotrbajdek/mars-t) is designed to be compatible with **Windows** and **macOS**, and can be easily installed using [cargo](https://www.rust-lang.org/tools/install). However, the primary development and testing environment for mars-t is **Fedora Linux**.
-
 The current version of mars-t (v0.2.1) has been verified to work properly on Fedora Linux 37 and Ubuntu 22.10.
 
 ## METHOD 1 – USING CARGO
 
 **[Recommended for programmers]**
 
-**1.** To install mars-t from [crates.io](https://crates.io/crates/mars-t), use the following cargo command:
+**1.** To install mars-t from [crates.io](https://crates.io/crates/mars-t), use the following [cargo](https://www.rust-lang.org/tools/install) command:
 
 _cargo install mars-t_
 
 The executable will be saved in the hidden `.cargo/bin/` directory within your home directory.
 
-**2a.** For easy access, you may want to copy the mars-t file to the `/usr/bin/` directory. This can be done by following the instructions in Method 2 (3a, 3b).
+**2a.** For easy access, you may want to copy the mars-t file to either the `/usr/bin/` or the `~/.local/bin/` directory. This can be done by following the instructions in Method 3 (3a, 3b, 3c).
 
 **2b.** As an alternative, you can add the `~/.cargo/bin/` directory to your system's PATH variable, which can be configured using [rustup](https://www.rust-lang.org/tools/install).
 
-## METHOD 2 – UNIVERSAL LINUX BINARIES
+## METHOD 2 – SNAP INSTALLATION
+
+The software can be obtained through the [Snap Store](https://snapcraft.io/mars-t) and installed with just one command:
+
+_sudo snap install mars-t_
+
+## METHOD 3 – UNIVERSAL LINUX BINARIES
 
 **1.** To install mars-t, first download the distro-independent [binary](https://github.com/piotrbajdek/mars-t/releases/download/v0.2.1/mars-t) from GitHub.
 
@@ -56,7 +62,11 @@ _sudo cp mars-t /usr/bin/_
 
 _sudo cp mars-t /var/usrlocal/bin/_
 
-## METHOD 3 – DISTRO-SPECIFIC PACKAGES
+**3c.** As an alternative, consider installing locally in the `~/.local/bin/` directory:
+
+_cp mars-t $HOME/.local/bin/_
+
+## METHOD 4 – DISTRO-SPECIFIC PACKAGES
 
 **[Recommended for most users]**
 
@@ -74,7 +84,7 @@ Ubuntu:
 
 _sudo dpkg -i mars-t_0.2.1_amd64.deb_
 
-## METHOD 4 – MANUAL COMPILATION
+## METHOD 5 – MANUAL COMPILATION
 
 First, download and unpack the mars-t [source code](https://github.com/piotrbajdek/mars-t/archive/refs/tags/v0.2.1.zip) from GitHub. Next, to build and install the program, use the command:
 
